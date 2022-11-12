@@ -4,6 +4,7 @@ const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
         playRound(button.className, getComputerChoice());
+        
         if(p == 5)
         {
             results.textContent = "Congrats on beating the computer to 5 wins! You have successfully beat the computer!";
@@ -32,22 +33,25 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection) {
     let pS = playerSelection;
+    console.log(computerSelection);
+
     if (pS == computerSelection)
     {
-        results.textConten="Tie!";
+        results.textContent= "Tie! Computer selected " + computerSelection + ".";
+        return;
     }
 
     if (pS == 'rock')
     {
         if(computerSelection == 'paper')
         {
-            results.textContent = "You Lose! Paper beats Rock";
+            results.textContent = "You Lose! Computer selected paper. Paper beats Rock";
             c++;
             cScore.textContent = c.toString();
         }
         else
         {
-            results.textContent="You Win! Rock beats Scissors";
+            results.textContent="You Win! Computer selected scissors. Rock beats Scissors";
             p++;
             pScore.textContent = p.toString();
         }
@@ -56,13 +60,13 @@ function playRound(playerSelection, computerSelection) {
     {
         if(computerSelection == 'rock')
         {
-            results.textContent="You Win! Paper beats Rock";
+            results.textContent="You Win! Computer selected rock. Paper beats Rock";
             p++;
             pScore.textContent = p.toString();
         }
         else
         {
-            results.textContent="You Lose! Scissors beats Paper";
+            results.textContent="You Lose! Computer selected scissors. Scissors beats Paper";
             c++;
             cScore.textContent = c.toString();
         }
@@ -71,13 +75,13 @@ function playRound(playerSelection, computerSelection) {
     {
         if(computerSelection == 'rock')
         {
-            results.textContent="You Lose! Rock beats Scissors";
+            results.textContent="You Lose! Computer selected rock. Rock beats Scissors";
             c++;
             cScore.textContent = c.toString();
         }
         else
         {
-            results.textContent="You Win! Scissors beats Paper";
+            results.textContent="You Win! Computer selected paper. Scissors beats Paper";
             p++;
             pScore.textContent = p.toString();
         }

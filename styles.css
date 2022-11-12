@@ -1,0 +1,33 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: sans-serif;
+    gap: 20px;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+.results {
+    font-size: 28px;
+}
+
+.but, .score {
+    display: flex;
+    
+    font-size: 22px;
+}
+
+.but {
+    gap: 22px;
+}
+
+.score {
+    gap: 10px;
+}
+
+button {
+    padding: 10px 14px;
+    text-align: center;
+}
